@@ -4,21 +4,21 @@
 
 ## 最新版本
 
-- 版本：`v0.2.2`
+- 版本：`v0.2.3`
 - 平台：Windows x64
 - 形式：NSIS 安装程序
 - 下载：[前往最新 Release](https://github.com/AnsoNeko/game-sentiment-tool-releases/releases/latest)
 
 ## 使用方式
 
-1. 在最新 Release 页面下载 `GameSentimentTool-v0.2.2-win-x64-Setup.exe`。
+1. 在最新 Release 页面下载 `GameSentimentTool-v0.2.3-win-x64-Setup.exe`。
 2. 运行安装程序，可选择安装目录，并按需创建桌面和开始菜单快捷方式。
 3. 软件的项目、评论、Cookie、安全配置和 AI 配置均保存在当前 Windows 用户的本地应用数据目录中，不会存入本仓库。
 
 当前版本未进行代码签名，Windows SmartScreen 可能显示未知发布者提示。请只从本仓库的 Release 页面下载，并可使用下列 SHA-256 校验文件：
 
 ```text
-5849838E3470A7FC0A4FC088CA2D2CE43B9650F5086BAAD64730A3E12F0D600A
+13CDCC923D67D889081B7DDAEA9359FCA563745482D5D61D59AF82151FA38B9C
 ```
 
 ## 更新检查
@@ -26,3 +26,5 @@
 软件内置本仓库地址，优先通过 GitHub 公开 Release 网页跳转检查版本，并在必要时使用 API 回退。检查更新不会上传本地项目数据、玩家评论、Cookie、API Key、Prompt 或安全设置。
 
 版本变化请查看 [CHANGELOG.md](CHANGELOG.md)。
+
+开发者：安索Anso。
