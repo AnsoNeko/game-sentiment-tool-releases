@@ -1,5 +1,33 @@
 # 更新说明
 
+## v0.2.6 - 2026-07-15
+
+### 修复与改进
+
+- 修复部分用户电脑没有 Python、命中 Microsoft Store 别名或缺少 FastAPI/uvicorn 依赖时，Next 界面可以打开但本地数据服务未启动，最终被误报为“数据库读取故障 / Failed to fetch”的问题。
+- 安装版启动时自动检测 Python 3.10–3.12；没有兼容环境时先征求用户同意，同意后优先通过 WinGet 为当前用户安装 Python 3.12。
+- WinGet 不可用或安装后仍未发现 Python 时，从 python.org 下载固定的 Python 3.12.10 官方安装包，校验 SHA-256 后执行当前用户安装。
+- 后端依赖安装到 `%APPDATA%\toolbox-sentiment-electron\runtime\python-venv` 隔离环境，不修改用户现有 Python 包；requirements 未变化时二次启动直接复用。
+- FastAPI 与 Next 健康检查通过前不打开主工作台；用户取消、Python 安装失败、依赖失败、端口占用和服务启动失败分别提示并提供日志位置。
+- 前端不再把网络层 `Failed to fetch` 统一描述为数据库损坏，改为提示“本地数据服务连接失败”。
+
+### 使用方法与注意事项
+
+1. 正常退出旧版本后运行 `GameSentimentTool-v0.2.6-win-x64-Setup.exe` 覆盖安装，无需卸载或迁移数据。
+2. 首次启动如未检测到兼容 Python，应用会说明安装来源与范围；只有用户点击“同意并安装”后才会自动安装。
+3. 首次准备隔离环境需要联网下载 Python 或后端依赖，可能持续数分钟；后续启动将复用已验证环境。
+4. 默认继续读取 `%APPDATA%\toolbox-sentiment-electron`。不要手工复制、合并或删除历史 userData 目录。
+5. 安装器未进行 Authenticode 代码签名，可能触发 Windows SmartScreen；请只从本仓库 Release 下载并核对 SHA-256。
+
+### 验证与校验
+
+- Python runtime 检测、真实临时虚拟环境、二次复用、用户取消和模拟 WinGet 自动安装测试通过。
+- 后端 13 项、AI、AI 长任务、来源归属导出、更新、安全、稳定路径、Electron userData、Electron 脚本语法、TypeScript 和 Next production build 均通过。
+- NSIS 覆盖安装后，真实稳定 userData 可读取既有项目、评论、报告与采集任务；数据库迁移仍为 `[1,2]`，退出后 `8765/32123` 端口释放。
+- Windows EXE CompanyName：`安索Anso`；Authenticode：`NotSigned`。
+- 安装包大小：`98,316,488` 字节。
+- 安装包 SHA-256：`4D5749C499554533CC36F2A3772B7C145218A19E3CCABA623A0547B8C47E2E69`。
+
 ## v0.2.5 - 2026-07-14
 
 ### 修复与改进

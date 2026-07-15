@@ -4,23 +4,23 @@
 
 ## 最新版本
 
-- 版本：`v0.2.5`
+- 版本：`v0.2.6`
 - 平台：Windows x64
 - 形式：NSIS 安装程序
 - 下载：[前往最新 Release](https://github.com/AnsoNeko/game-sentiment-tool-releases/releases/latest)
 
-> v0.2.5 继续固定读取历史 userData 目录 `%APPDATA%\toolbox-sentiment-electron`，可直接覆盖 v0.2.4 安装。项目、评论、周报、Cookie、安全设置和 AI 配置无需迁移，也不要手工复制、合并或删除 userData 目录。
+> v0.2.6 新增 Python 环境自动检测与用户授权后的自动安装，修复部分电脑只能打开界面、随后显示“数据库读取故障 / Failed to fetch”的问题。仍固定读取历史 userData 目录 `%APPDATA%\toolbox-sentiment-electron`，项目、评论、周报、Cookie、安全设置和 AI 配置无需迁移，也不要手工复制、合并或删除 userData 目录。
 
 ## 使用方式
 
-1. 在最新 Release 页面下载 `GameSentimentTool-v0.2.5-win-x64-Setup.exe`。
+1. 在最新 Release 页面下载 `GameSentimentTool-v0.2.6-win-x64-Setup.exe`。
 2. 运行安装程序，可选择安装目录，并按需创建桌面和开始菜单快捷方式。
 3. 软件的项目、评论、Cookie、安全配置和 AI 配置均保存在当前 Windows 用户的本地应用数据目录中，不会存入本仓库。
 
 当前版本未进行代码签名，Windows SmartScreen 可能显示未知发布者提示。请只从本仓库的 Release 页面下载，并可使用下列 SHA-256 校验文件：
 
 ```text
-1FC32D3C1C706CBA8B1891E0AEC747101F5EBEE2D101A6598457679449E8E650
+4D5749C499554533CC36F2A3772B7C145218A19E3CCABA623A0547B8C47E2E69
 ```
 
 ## 更新检查
