@@ -4,23 +4,23 @@
 
 ## 最新版本
 
-- 版本：`v0.2.8`
+- 版本：`v0.2.9`
 - 平台：Windows x64
 - 形式：NSIS 安装程序
 - 下载：[前往最新 Release](https://github.com/AnsoNeko/game-sentiment-tool-releases/releases/latest)
 
-> v0.2.8 优先采用 Steam“推荐/不推荐”作为评论情感结论，避免正面长评被关键词误判；没有平台明确评价时才使用脚本分析。统计、报告与导出默认按采集时间归类，并可切换为评论发布时间；舆情深度研判面板会跟随当前评论，长列表中无需返回顶部。
+> v0.2.9 新增软件内直接更新：发现后续版本时可在关于页直接下载、查看进度、取消，并在文件大小和 SHA-256 校验通过后重启安装。v0.2.8 及更早版本需要手动安装本版一次，之后即可使用软件内更新。
 
 ## 使用方式
 
-1. 在最新 Release 页面下载 `GameSentimentTool-v0.2.8-win-x64-Setup.exe`。
+1. 在最新 Release 页面下载 `GameSentimentTool-v0.2.9-win-x64-Setup.exe`。
 2. 运行安装程序，可选择安装目录，并按需创建桌面和开始菜单快捷方式。
 3. 软件的项目、评论、Cookie、安全配置和 AI 配置均保存在当前 Windows 用户的本地应用数据目录中，不会存入本仓库。
 
 当前版本未进行代码签名，Windows SmartScreen 可能显示未知发布者提示。请只从本仓库的 Release 页面下载，并可使用下列 SHA-256 校验文件：
 
 ```text
-F2C667FD09EFF0DA80EAF7F51F3390227846570BC59236E31A087B8F650554C0
+493B24563A987873C6834AB1C37C5CAD6CE6BD38FB93FCA4A1CC1693B4E97B4A
 ```
 
 ## 更新检查
