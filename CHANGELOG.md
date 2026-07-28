@@ -1,5 +1,19 @@
 # 更新说明
 
+## v0.2.10 - 2026-07-28
+
+### 修复
+
+- 更新检查与安装包下载改用 Electron/Chromium 系统网络通道，兼容 Windows 系统代理。
+- 修复 v0.2.9 在部分代理网络中 Node 直连 GitHub Release 资产失败、错误退化为打开网页的问题。
+- 真实 Electron 网络测试已读取公开 `latest.json`，确认可直接更新、安装资产名称和大小完整。
+
+### 校验
+
+- 安装包大小：`98,325,720` 字节。
+- 安装包 SHA-256：`BCA5BC27F969D798A782B43B634D6C97FB12F0E977C7CCA676DF62BFACB5F91F`。
+- Authenticode：`NotSigned`。
+
 ## v0.2.9 - 2026-07-28
 
 ### 新增与改进
