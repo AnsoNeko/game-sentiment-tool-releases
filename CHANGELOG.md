@@ -11,6 +11,13 @@
 - 支持任务取消、中断恢复、单主页重试、重试全部失败、指定作品链接补采，以及 CSV/XLSX 导出；指定作品补采仍校验平台、可访问性和已知作者归属。
 - 本地平台采集和指定链接采集取消每内容/链接 300 条评论硬上限；超过 300 条显示耗时和平台风控风险提示，但不修改输入或阻止任务。Steam、B站、抖音、小红书和微博采集器不再静默截断。
 
+### 同版本热修复：软件内重启安装
+
+- 修复点击“重启并安装”后应用退出、但 NSIS 没有完成升级且没有错误反馈的问题。更新助手现在会等待旧进程退出，显式显示 Windows 管理员权限确认，并等待、记录安装器退出码。
+- 安装成功后通过 `--force-run` 自动打开更新后的应用；用户取消管理员确认或安装器失败时，会重新打开原版本、显示失败提示，并提供 `%APPDATA%\toolbox-sentiment-electron\logs\update-install.log` 日志入口。
+- 更新助手脚本使用带 BOM 的 UTF-8，确保 Windows 自带 PowerShell 5 能正确解析中文诊断内容；更新 smoke 覆盖提权、退出码、成功重启、失败恢复和 PowerShell 5 语法。
+- 本次按用户要求仍使用 `v0.3.1` 标签并替换同名资产。由于首批 v0.3.1 与此前版本中的旧更新代码无法反向修复，受影响用户需要手动下载刷新后的 v0.3.1 安装包并以管理员身份覆盖安装一次；同版本不会再次出现自动更新提示。
+
 ### 数据与安全
 
 - 保留稳定 `%APPDATA%\toolbox-sentiment-electron` userData 路径；v1/v2 数据库增量迁移到 v3，不重建或替换既有项目、评论、周报及设置。
@@ -23,8 +30,8 @@
 - Next.js 15.5.20 production build、Windows x64 NSIS 和打包资源检查通过；隔离 `win-unpacked` 的 FastAPI/OpenAPI `0.3.1`、Next 页面、SQLite v1/v2→v3 迁移及退出端口释放通过。
 - 打包 Electron Node 模式下的小红书签名自检通过；安装资产和 `latest.json` 的版本、大小、URL 与 SHA-256 一致。
 - Windows EXE 文件/产品版本：`0.3.1`；CompanyName：`安索Anso`；Authenticode：`NotSigned`。
-- 安装包大小：`98,355,378` 字节。
-- 安装包 SHA-256：`EB7D999F65AF96D8C83CDF96419A399E59C13C9C0C1613B8FDEA0F38CFFCCB23`。
+- 安装包大小：`98,356,338` 字节。
+- 安装包 SHA-256：`48B1B375018923EE44ECBCB93090239C8A26FE73E39F2DA47100DED6CA9B9EAE`。
 
 ## v0.2.11 - 2026-07-28
 
