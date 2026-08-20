@@ -17,11 +17,12 @@
 ### P0 发布门禁与真实验证
 
 - “应用内更新”升级为每个新版本的 P0 阻断项。打包命令强制检查 `latest.json`、文件大小/SHA-256、Windows 版本资源、NSIS 原路径复用和打包 `app.asar` 中“安装器先就绪、客户端后退出”的顺序；任一失败不得发布。
-- 最终待发布安装包完成真实 UAC/NSIS 验收：状态依次为 `installer-started`、`completed`，NSIS 退出码 0，旧进程退出后安装版 0.3.3 主窗口自动拉起；正常关闭后 Electron/FastAPI/Next 进程与端口均释放。
+- 正式安装包完成真实 UAC/NSIS 验收：状态依次为 `installer-started`、`completed`，NSIS 退出码 0，旧进程退出后安装版 0.3.3 主窗口自动拉起；正常关闭后 Electron/FastAPI/Next 进程与端口均释放。
 - 隔离打包 EXE 冒烟返回 FastAPI/OpenAPI 0.3.3、Next/Logo 200；真实 SQLite 只读 `integrity_check=ok`，安全设置、Cookie 和 AI 配置文件摘要在覆盖安装前后一致。
 - Windows EXE 文件/产品版本：`0.3.3`；CompanyName：`安索Anso`；Authenticode：`NotSigned`。
 - 安装包大小：`98,364,883` 字节。
 - 安装包 SHA-256：`4777774DAFA2160EB9D709960E0C0ADF26C447D76415D93969C2BACD22A1A537`。
+- 正式 Release 已设为 Latest，两项资产均为 `uploaded`；GitHub digest、Draft 回下载安装包/清单 SHA-256 与本地逐项一致。发布后真实 Electron 网络检查返回 `latestVersion=0.3.3`、`canAutoUpdate=true`、`installerSize=98364883`。
 
 ## v0.3.2 - 2026-08-20
 
