@@ -1,5 +1,28 @@
 # 更新说明
 
+## v0.3.3 - 2026-08-20
+
+### P0 应用内更新修复
+
+- 修复从 v0.2.x 延续至 v0.3.2 的灾难性更新体验：点击“重启并安装”后，旧客户端可能先退出，而 PowerShell/NSIS 尚未真正启动，最终既没有安装界面，也没有自动恢复。
+- 新链路由附着于旧 Electron 的 bootstrap 请求 Windows 管理员权限，再启动独立的管理员工作进程。工作进程先创建 NSIS 并写入 `installer-started` 状态；只有 Electron 读到该握手后才允许旧客户端退出。
+- 管理员工作进程继续等待 NSIS，记录退出码并写入 `completed` 或 `failed`；成功时自动打开新版，安装阶段失败时重新打开原应用。取消 UAC、工作进程提前退出或握手超时时，旧客户端保持运行并显示诊断日志位置。
+- 所有参数以 UTF-8/Base64 内嵌到提权命令，避免 Windows UAC 不继承父进程临时环境变量，以及中文或带空格路径导致助手静默退出。
+
+### 强制迁移说明
+
+- **v0.3.2 及更早安装版无法反向获得本次修复，必须从本 Release 手工下载 v0.3.3，并以管理员身份覆盖安装一次。** 安装程序会沿用原路径，稳定 `%APPDATA%\toolbox-sentiment-electron` 数据目录不变。
+- 完成这一次手工迁移后，v0.3.3 才是后续“应用内自动更新”的可信基线。
+
+### P0 发布门禁与真实验证
+
+- “应用内更新”升级为每个新版本的 P0 阻断项。打包命令强制检查 `latest.json`、文件大小/SHA-256、Windows 版本资源、NSIS 原路径复用和打包 `app.asar` 中“安装器先就绪、客户端后退出”的顺序；任一失败不得发布。
+- 最终待发布安装包完成真实 UAC/NSIS 验收：状态依次为 `installer-started`、`completed`，NSIS 退出码 0，旧进程退出后安装版 0.3.3 主窗口自动拉起；正常关闭后 Electron/FastAPI/Next 进程与端口均释放。
+- 隔离打包 EXE 冒烟返回 FastAPI/OpenAPI 0.3.3、Next/Logo 200；真实 SQLite 只读 `integrity_check=ok`，安全设置、Cookie 和 AI 配置文件摘要在覆盖安装前后一致。
+- Windows EXE 文件/产品版本：`0.3.3`；CompanyName：`安索Anso`；Authenticode：`NotSigned`。
+- 安装包大小：`98,364,883` 字节。
+- 安装包 SHA-256：`4777774DAFA2160EB9D709960E0C0ADF26C447D76415D93969C2BACD22A1A537`。
+
 ## v0.3.2 - 2026-08-20
 
 ### 修复与改进
