@@ -1,5 +1,28 @@
 # 更新说明
 
+## v0.3.4-AIagent - 2026-08-25
+
+### AI 驾驶舱与反链采集
+
+- 新增 AI 驾驶舱，支持项目归类持久会话、逐轮模型与思考强度、受控业务工具、附件读取和删除审批；附件不向模型或 renderer 暴露本机路径。
+- AI 发起的反链、评论采集、评论分析、报告和导出按用户当轮明确授权分阶段执行；平台 Cookie 需求由后端依据真实主页或作者档案推导。
+- 用户自主操作的反链数据采集与普通版 v0.3.4 对齐：首词作为主关键词，按主页执行副关键词兜底，副词候选必须由主关键词精确匹配真实标签后才能保存。
+
+### 独立安装与更新频道
+
+- 产品名和快捷方式为“项目舆情与运营支持工具 AIagent版”，主程序为 `GameSentimentToolAIagent.exe`；与普通版使用不同安装记录及 `%APPDATA%\toolbox-sentiment-electron-agentver-internal` 数据目录。
+- AIagent 只读取主分支 `channels/agentver/latest.json`，要求 `channel: "agentver"`，并只接受 `v<version>-AIagent` 标签和 `GameSentimentTool-AIagent-v<version>-win-x64-Setup.exe`。不会访问或回退到普通版 Latest。
+- 普通版 v0.3.4 继续保持 GitHub Latest，其 `latest.json` 与原安装资产不修改。两版可并行安装，但因共享 `8765/32123` 端口不能同时运行。
+
+### 验证与校验
+
+- 后端、AI、驾驶舱、附件、任务守卫、反链、导出、更新频道隔离、安全、路径、安装器、Python runtime、Electron 语法、renderer TypeScript 和 production build 全部通过。
+- Windows x64 NSIS、app.asar、Next standalone、FastAPI/OpenAPI 0.3.4、AI 驾驶舱资源、独立更新配置及打包应用退出端口释放门禁通过。
+- 真实 UAC/NSIS 安装退出码 0；普通版与 AIagent 的安装记录、EXE、快捷方式和 userData 独立。普通版数据库及加密配置摘要未变化，AIagent 数据库 `integrity_check=ok`、迁移为 v5，既有项目、评论、驾驶舱会话、Cookie 和 AI 配置保持可读。
+- Windows EXE 文件/产品版本：`0.3.4`；CompanyName：`安索Anso`；Authenticode：`NotSigned`。
+- 安装包大小：`98,399,806` 字节。
+- 安装包 SHA-256：`84A145419C3E443DCD6EF5DDFC6CC95D03960B9EE1316E5C1FA70B1C7255CC72`。
+
 ## v0.3.4 - 2026-08-25
 
 ### 反链主、副关键词采集规则

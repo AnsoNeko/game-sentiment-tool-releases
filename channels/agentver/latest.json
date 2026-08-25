@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "channel": "agentver",
+  "version": "0.3.4",
+  "tag": "v0.3.4-AIagent",
+  "releaseName": "v0.3.4-AIagent · AI 驾驶舱独立版",
+  "publishedAt": null,
+  "installer": {
+    "name": "GameSentimentTool-AIagent-v0.3.4-win-x64-Setup.exe",
+    "url": "https://github.com/AnsoNeko/game-sentiment-tool-releases/releases/download/v0.3.4-AIagent/GameSentimentTool-AIagent-v0.3.4-win-x64-Setup.exe",
+    "size": 98399806,
+    "sha256": "84A145419C3E443DCD6EF5DDFC6CC95D03960B9EE1316E5C1FA70B1C7255CC72"
+  }
+}
