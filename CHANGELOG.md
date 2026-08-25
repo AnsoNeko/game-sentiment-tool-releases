@@ -19,6 +19,9 @@
 - 后端、AI、驾驶舱、附件、任务守卫、反链、导出、更新频道隔离、安全、路径、安装器、Python runtime、Electron 语法、renderer TypeScript 和 production build 全部通过。
 - Windows x64 NSIS、app.asar、Next standalone、FastAPI/OpenAPI 0.3.4、AI 驾驶舱资源、独立更新配置及打包应用退出端口释放门禁通过。
 - 真实 UAC/NSIS 安装退出码 0；普通版与 AIagent 的安装记录、EXE、快捷方式和 userData 独立。普通版数据库及加密配置摘要未变化，AIagent 数据库 `integrity_check=ok`、迁移为 v5，既有项目、评论、驾驶舱会话、Cookie 和 AI 配置保持可读。
+- `v0.3.4-AIagent` 已发布为 Prerelease，两项资产均为 `uploaded`；GitHub size/digest 与本地一致，草稿回下载的安装包和清单 SHA-256 分别完全一致，Release 中文正文无 BOM、乱码或替换字符。
+- 发布后真实 Electron 网络检查确认普通版仍返回 `GameSentimentTool-v0.3.4-win-x64-Setup.exe`，AIagent 只返回 `GameSentimentTool-AIagent-v0.3.4-win-x64-Setup.exe`。Agent 更新模块又从真实 Release 非缓存下载完整安装包并通过大小及 SHA-256 校验。
+- GitHub `releases/latest` 仍为普通 `v0.3.4`；原普通安装包和 `latest.json` 的资产 ID、大小及 digest 均未变化。
 - Windows EXE 文件/产品版本：`0.3.4`；CompanyName：`安索Anso`；Authenticode：`NotSigned`。
 - 安装包大小：`98,399,806` 字节。
 - 安装包 SHA-256：`84A145419C3E443DCD6EF5DDFC6CC95D03960B9EE1316E5C1FA70B1C7255CC72`。
