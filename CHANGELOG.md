@@ -21,6 +21,8 @@
 - Python compileall、49 项后端测试、AI/长任务、CSV/XLSX 导出、反链导出、更新、安全、路径、Python runtime、Electron 脚本语法、renderer TypeScript 与 Next.js production build全部通过。
 - Windows x64 NSIS、打包资源、小红书签名运行时、`latest.json` 及应用内更新 P0 静态门禁通过；隔离打包 EXE 返回 FastAPI/OpenAPI 0.3.4、Next/Logo 200，正常退出后端口释放。
 - 本机真实 UAC/NSIS 覆盖安装状态依次为 `installer-started`、`completed`，NSIS 退出码 0，新版主窗口自动拉起；真实 SQLite 只读 `integrity_check=ok`，既有 2 个项目和 586 条评论可读，Cookie、安全设置和 AI 配置文件摘要在安装前后一致。
+- 正式 Release 已设为 Latest，两项资产均为 `uploaded`；GitHub digest、Draft 回下载安装包和清单摘要与本地逐项一致，中文正文无 BOM 或乱码。发布后真实 Electron 网络检查返回 `latestVersion=0.3.4`、`canAutoUpdate=true`、`installerSize=98367808`。
+- 上一版本 P0 验收由官方 v0.3.3 安装模块从正式 Release 重新下载 v0.3.4（非缓存复用），完成大小/SHA-256 校验、`installer-started → completed`、NSIS 退出码 0 和新版自动重启；升级后的数据库、业务数量及三份加密配置摘要保持不变，正常关闭后进程与端口释放。
 - Windows EXE 文件/产品版本：`0.3.4`；CompanyName：`安索Anso`；Authenticode：`NotSigned`。
 - 安装包大小：`98,367,808` 字节。
 - 安装包 SHA-256：`4C34D5D0FE0A83D1B1B0F0C606FFB257C7269F7C300EE1C6166C6B7BDFD9E3E3`。
