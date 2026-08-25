@@ -1,5 +1,30 @@
 # 更新说明
 
+## v0.3.4 - 2026-08-25
+
+### 反链主、副关键词采集规则
+
+- 多关键词按输入顺序解释：第一个是主关键词，其余是副关键词；规则按每个作者主页独立执行。
+- 在日期和扫描上限内，主页只要存在主关键词命中的作品，就只保存主词结果，不启动该主页的副词兜底；主词零结果时，才对全部副关键词候选取并集并去重。
+- 副词候选必须由主关键词包含匹配作品真实标签后才会保存。B站仅使用标签接口的真实 tag，不接受分区名；抖音使用 hashtag，小红书使用 `tag_list`。标签缺失或接口失败时拒绝候选，但不把主页标记为平台采集故障。
+- 关键词与标签比较统一使用 Unicode NFKC、去首尾空白和大小写不敏感处理。副词有候选但全部未通过验证时记录 `NO_VERIFIED_MATCH` 并保留候选数量，完全没有候选时保持 `NO_MATCH`。
+- 历史 ANY/ALL 任务重试时也归一化到新策略；指定作品补采仍绕过关键词和日期规则。没有新增数据库迁移，继续使用 v4 数据库。
+
+### 界面、结果与导出
+
+- 新建任务界面移除 ANY/ALL 选择，按输入顺序标识主关键词和副关键词，并说明逐主页兜底及主词标签验证。
+- 任务详情、结果表、CSV 和 XLSX 增加主词、副词、发现方式和验证结果说明；主词结果记录主关键词，兜底结果记录主关键词及实际命中的副关键词。
+- `keywordMode` 保留兼容字段名并统一返回 `primary_fallback`；结果发现方式新增 `primary_keyword`、`secondary_fallback`，继续兼容历史 `homepage` 和指定作品 `manual`。
+
+### 验证与校验
+
+- Python compileall、49 项后端测试、AI/长任务、CSV/XLSX 导出、反链导出、更新、安全、路径、Python runtime、Electron 脚本语法、renderer TypeScript 与 Next.js production build全部通过。
+- Windows x64 NSIS、打包资源、小红书签名运行时、`latest.json` 及应用内更新 P0 静态门禁通过；隔离打包 EXE 返回 FastAPI/OpenAPI 0.3.4、Next/Logo 200，正常退出后端口释放。
+- 本机真实 UAC/NSIS 覆盖安装状态依次为 `installer-started`、`completed`，NSIS 退出码 0，新版主窗口自动拉起；真实 SQLite 只读 `integrity_check=ok`，既有 2 个项目和 586 条评论可读，Cookie、安全设置和 AI 配置文件摘要在安装前后一致。
+- Windows EXE 文件/产品版本：`0.3.4`；CompanyName：`安索Anso`；Authenticode：`NotSigned`。
+- 安装包大小：`98,367,808` 字节。
+- 安装包 SHA-256：`4C34D5D0FE0A83D1B1B0F0C606FFB257C7269F7C300EE1C6166C6B7BDFD9E3E3`。
+
 ## v0.3.3 - 2026-08-20
 
 ### P0 应用内更新修复
