@@ -26,6 +26,8 @@
 - Python compileall、60 项后端测试、热度监测、安全、安装器、路径、Python runtime、更新 smoke、Electron 脚本语法、renderer TypeScript 和 Next.js production build 通过。
 - 1440×1000 与 768×900 隔离 Playwright 验证并排分页、手动链接弹窗、停止任务移除和窄屏卡片，console error 为 0；公开 B站视频元数据低频只读解析成功。
 - Windows x64 NSIS、`latest.json`、P0 包内更新门禁和隔离打包应用 FastAPI/Next/Logo/退出端口释放通过；本次按用户要求不执行 Release 资产回下载测试。
+- `v0.3.5` 已发布为普通版 GitHub Latest（非 Draft、非 Prerelease）；安装包与 `latest.json` 均为 `uploaded`，GitHub size/digest 与本地产物一致，Release 中文正文核对无乱码或替换字符。
+- 独立的 `v0.3.4-AIagent` 仍保持 Prerelease，原 AIagent 资产未修改，也未被设为普通版 Latest。
 - Windows EXE 文件/产品版本：`0.3.5`；CompanyName：`安索Anso`；Authenticode：`NotSigned`。
 - 安装包大小：`98,390,021` 字节。
 - 安装包 SHA-256：`0A2804D69B8A407C1EE122D6170F14C3130F8A36A9F4B2CAC2A8A6A1E67FC9F1`。
