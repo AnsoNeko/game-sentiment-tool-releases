@@ -26,6 +26,8 @@
 - SQLite 增量迁移至 v6，继续兼容 v1-v5；迁移只增加作者资产相关表、约束和索引，不重建或替换真实数据库。
 - Python compileall、86 项后端测试、热度、AI/O3、500 作者规模、AI 长任务、导出、更新、安装路径、安全、userData 路径、Python runtime、Electron 语法、renderer TypeScript 与 Next.js production build 通过。
 - Windows x64 NSIS、`latest.json`、P0 包内门禁和隔离打包 EXE 冒烟通过。真实 v0.3.5→v0.4.0 更新状态为 `installer-started → completed`，NSIS 退出码 0，新版自动重启；FastAPI/Next/Logo 正常，稳定 userData 业务数量及三份加密配置摘要保持不变，正常关闭后端口释放。
+- `v0.4.0` 已发布为普通版 GitHub Latest（非 Draft、非 Prerelease）；安装包与 `latest.json` 均为 `uploaded`，GitHub size/digest 与本地一致，Draft 全新目录回下载的安装包和清单摘要逐项一致，中文正文无 BOM、乱码或替换字符。
+- 发布后真实 Electron 网络检查返回 `latestVersion=0.4.0`、`canAutoUpdate=true`、安装器大小 `98,488,428`。官方 v0.3.5 更新模块随后从真实 Release 非缓存下载完整安装包，完成大小/SHA-256 校验、`installer-started → completed`、NSIS 退出码 0 和新版自动重启；SQLite 完整性、业务数量和三份加密配置摘要保持不变。
 - Windows EXE 文件/产品版本：`0.4.0`；CompanyName：`安索Anso`；Authenticode：`NotSigned`。
 - 安装包大小：`98,488,428` 字节。
 - 安装包 SHA-256：`2527833802B0FF99A6CFE2E845F3F4F48EA694FA8D73842C1D2CA30DD3D8EB70`。
