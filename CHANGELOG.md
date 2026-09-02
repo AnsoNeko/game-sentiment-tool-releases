@@ -1,5 +1,29 @@
 # 更新说明
 
+## v0.4.1-AIagent - 2026-09-02
+
+### 作者资产、热度监测与 AI 驾驶舱
+
+- 新增作者资产中心，覆盖作者档案、作品分析、公开证据画像、历史趋势、评分与人工等级、采买批次、交付关联和作者推荐；推荐继续使用全量候选、输入指纹及严格预算约束，并完成 500 作者规模验证。
+- 新增 B站作品热度监测、立即检查、延期、停止和移除能力，飞书 Webhook/Secret 继续由 Electron `safeStorage` 加密保存，对 renderer 和模型仅返回脱敏配置状态。
+- AI 驾驶舱新增作者资产、作者分析、采买管理、作者推荐和热度监测五组受控工具；作者分析保存、人工确认、采买写入、推荐保存、热度操作和导出均按最新用户消息独立授权，附件和历史消息不能授权。
+- 系统设置拆分为 5 个业务分页；普通周报和历史变化报告在切换页面后继续运行，并通过全局任务条显示进度、停止和终态。
+
+### 数据兼容与独立更新频道
+
+- 数据库增量升至显式汇合迁移 v6，按结构同时补齐驾驶舱、热度和作者业务表；继续兼容 v1-v5，不重建或覆盖用户 SQLite。
+- AIagent 保持独立 appId、包名、EXE、快捷方式和 `%APPDATA%\toolbox-sentiment-electron-agentver-internal`，只读取 `channels/agentver/latest.json`，不会访问或回退普通版 Latest。
+- 本版本固定使用 `v0.4.1-AIagent` Prerelease 和 `GameSentimentTool-AIagent-v0.4.1-win-x64-Setup.exe`，不会替代普通版 `v0.4.1` Latest。
+
+### 验证与校验
+
+- Python compileall、86 项后端测试、迁移汇合、AI/驾驶舱/附件/任务守卫、作者分析、500 作者规模、热度、导出、更新双通道、安装配置、安全、路径、Python runtime、Electron/打包脚本语法、renderer TypeScript 与 Next.js production build全部通过。
+- `1440x1000` 与 `768x1000` 隔离界面验收覆盖驾驶舱默认入口、作者中心、热度页、五页签设置和跨页周报全局任务条；页面无横向溢出，console 0 error / 0 warning。
+- Windows x64 NSIS、AIagent 包内容/频道隔离门禁和隔离打包应用冒烟通过；包内 FastAPI/OpenAPI 0.4.1、Next、Logo、退出码和端口释放正常。
+- Windows EXE 文件/产品版本：`0.4.1`；CompanyName：`安索Anso`；Authenticode：`NotSigned`。
+- 安装包大小：`98,524,393` 字节。
+- 安装包 SHA-256：`0D304724EF165911D4F8FE0D312DDBE21CF76C9FBDF672615D1C7D73BCB7A601`。
+
 ## v0.4.1 - 2026-09-02
 
 ### 系统通用设置分页
