@@ -19,6 +19,9 @@
 - Python compileall、86 项后端测试、AI、作者分析、500 作者规模、AI 长任务、导出、热度、更新、安装路径、安全、userData、Python runtime、Electron/打包脚本语法、renderer TypeScript 与 Next.js production build 全部通过。
 - 1440×1000 与 768×1000 隔离 Playwright 覆盖 5 个设置分页、未保存表单状态、键盘/窄屏滚动，以及普通周报和历史变化报告的跨页运行、完成、停止、旧草稿保护与终态后再次启动；页面无横向溢出，console 0 error / 0 warning。
 - Windows x64 NSIS、`latest.json`、P0 包内更新门禁和隔离打包应用冒烟通过；包内 FastAPI/OpenAPI 0.4.1、Next、Logo、退出码和端口释放正常。数据库迁移保持 v6，不新增后端业务接口或 AI 凭据格式。
+- `v0.4.1` 已发布为普通版 GitHub Latest（非 Draft、非 Prerelease）；安装包和 `latest.json` 均为 `uploaded`，GitHub size/digest 与本地一致。Draft 全新目录回下载的两项文件逐字节一致，中文正文无 BOM、乱码、`?` 或替换字符。
+- 发布后真实 Electron 网络检查返回 `latestVersion=0.4.1`、`canAutoUpdate=true`、安装器大小 `98,491,524`。当前机器系统级 v0.4.0 的真实 `app.asar` 随后从正式 Release 非缓存下载并校验完整安装包，完成 `installer-started → completed`、NSIS 退出码 0 和 v0.4.1 自动重启。
+- 升级后 EXE/FileVersion/ProductVersion 与 FastAPI/OpenAPI 均为 0.4.1，Next/Logo 正常；稳定 userData SQLite `integrity_check=ok`、迁移 `[1,2,3,4,5,6]`，项目 3、评论 725、报告 4、采集任务 59、作者 15、作品 21 及三份加密配置摘要保持不变。应用正常关闭后 `3000/8765/32123` 全部释放。
 - Windows EXE 文件/产品版本：`0.4.1`；CompanyName：`安索Anso`；Authenticode：`NotSigned`。
 - 安装包大小：`98,491,524` 字节。
 - 安装包 SHA-256：`608DB4AC676CFE975DD292BC09F06310ED0B3DB38FB104AED1FBC239AF88C24C`。
