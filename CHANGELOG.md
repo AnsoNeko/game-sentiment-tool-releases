@@ -17,9 +17,13 @@
 
 ### 验证与校验
 
-- Python compileall、86 项后端测试、迁移汇合、AI/驾驶舱/附件/任务守卫、作者分析、500 作者规模、热度、导出、更新双通道、安装配置、安全、路径、Python runtime、Electron/打包脚本语法、renderer TypeScript 与 Next.js production build全部通过。
+- Python compileall、86 项后端测试、迁移汇合、AI/驾驶舱/附件/任务守卫、作者分析、500 作者规模、热度、导出、更新双通道、安装配置、安全、路径、Python runtime、Electron/打包脚本语法、renderer TypeScript 与 Next.js production build 全部通过。
 - `1440x1000` 与 `768x1000` 隔离界面验收覆盖驾驶舱默认入口、作者中心、热度页、五页签设置和跨页周报全局任务条；页面无横向溢出，console 0 error / 0 warning。
 - Windows x64 NSIS、AIagent 包内容/频道隔离门禁和隔离打包应用冒烟通过；包内 FastAPI/OpenAPI 0.4.1、Next、Logo、退出码和端口释放正常。
+- `v0.4.1-AIagent` 已发布为独立 Prerelease（非 Draft），安装包和 `latest-agentver.json` 均为 `uploaded`；GitHub size/digest 与本地一致，Draft 全新目录回下载的两项文件摘要完全一致，中文正文无 BOM、乱码、`?` 或替换字符。
+- 本机原有 `v0.3.4-AIagent` 已通过真实 UAC/NSIS 安装交接升级到 0.4.1：状态为 `installer-started -> completed`、NSIS 退出码 0，并自动拉起新版。上一公开 AIagent 与本轮验收使用的 `electron/update.js` 文件哈希一致。
+- 升级后 FastAPI/OpenAPI 0.4.1、Next 和 Logo 正常；AIagent SQLite 为 `integrity_check=ok`、迁移 `[1,2,3,4,5,6]`，1 个项目、710 条评论、3 个作者、7 个作品、3 个驾驶舱会话和 32 条消息保持不变，三份加密状态文件摘要未改变。
+- 发布后真实 Electron 网络检查确认 AIagent 只返回 `v0.4.1-AIagent`，普通版仍返回正式 `v0.4.1`；Agent 更新模块从公网非缓存下载完整安装包并再次通过大小和 SHA-256 校验。普通版 Latest 及其两项资产 ID、大小和 digest 均未变化。
 - Windows EXE 文件/产品版本：`0.4.1`；CompanyName：`安索Anso`；Authenticode：`NotSigned`。
 - 安装包大小：`98,524,393` 字节。
 - 安装包 SHA-256：`0D304724EF165911D4F8FE0D312DDBE21CF76C9FBDF672615D1C7D73BCB7A601`。
