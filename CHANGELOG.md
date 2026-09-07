@@ -19,6 +19,9 @@
 - SQLite 增量迁移至 v7，新增持续任务状态、来源目标、采集轮次和通知发件箱；继续兼容 v1-v6，备份、彻底重置和历史清理同步覆盖新结构。
 - Python compileall、91 项后端测试、持续通知、作者分析、500 作者规模、AI、导出、更新、安全、路径、Python runtime、Electron/打包脚本语法、renderer TypeScript 与 Next.js production build 全部通过。
 - Windows x64 NSIS、P0 包内更新门禁、隔离打包应用和发布前真实 UAC/NSIS 覆盖通过；FastAPI/OpenAPI 0.4.2、Next、Logo、退出和端口释放正常，真实 SQLite v6→v7 与业务数量/加密配置摘要保持已验证。
+- `v0.4.2` 已发布为普通版 GitHub Latest（非 Draft、非 Prerelease）；安装包和 `latest.json` 均为 `uploaded`，GitHub size/digest 与本地一致。Draft 全新目录回下载的两项文件摘要完全一致，中文正文无 BOM、乱码、`?` 或替换字符。
+- 发布后真实 Electron 网络检查返回 `latestVersion=0.4.2`、`canAutoUpdate=true`。官方 v0.4.1 的真实更新模块随后从正式 Release 非缓存下载完整安装包并校验，完成 `installer-started → completed`、NSIS 退出码 0 和 v0.4.2 自动重启。
+- 升级后 EXE/FileVersion/ProductVersion 为 0.4.2，FastAPI、Next 和 Logo 正常；稳定 userData SQLite `integrity_check=ok`、迁移 `[1..7]`，项目 3、评论 725、报告 4、采集任务 59、作者 64、作品 38、轮次 8 和轮次新增关系 2 保持，五份加密配置摘要未改变。正常退出后 `3000/8765/32123` 全部释放。
 - Windows EXE 文件/产品版本：`0.4.2`；CompanyName：`安索Anso`；Authenticode：`NotSigned`。
 - 安装包大小：`98,503,287` 字节。
 - 安装包 SHA-256：`76A636BCB6DBD9E540053238A67FEBD89BFC0BBA2D4F5FD78898871EDEABD9FE`。
