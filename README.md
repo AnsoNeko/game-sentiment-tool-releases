@@ -4,7 +4,7 @@
 
 ## 最新版本
 
-- 版本：`v0.4.6`（发布准备中，正式状态以 Release 页面为准）
+- 版本：`v0.4.6`（普通版 Latest）
 - 平台：Windows x64
 - 形式：NSIS 安装程序
 - 下载：[前往最新 Release](https://github.com/AnsoNeko/game-sentiment-tool-releases/releases/latest)
