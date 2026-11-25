@@ -13,17 +13,19 @@
 
 ## AIagent 独立版
 
-- 版本：`v0.4.1-AIagent`（Prerelease，不会替代普通版 Latest）
+- 版本：`v0.4.9-AIagent`（独立 Prerelease）
 - 产品：`项目舆情与运营支持工具 AIagent版`
-- 安装包：`GameSentimentTool-AIagent-v0.4.1-win-x64-Setup.exe`
-- 下载：[前往 AIagent Prerelease](https://github.com/AnsoNeko/game-sentiment-tool-releases/releases/tag/v0.4.1-AIagent)
+- 安装包：`GameSentimentTool-AIagent-v0.4.9-win-x64-Setup.exe`
+- 下载：[前往 AIagent Prerelease](https://github.com/AnsoNeko/game-sentiment-tool-releases/releases/tag/v0.4.9-AIagent)
 
-AIagent 版包含 AI 驾驶舱、作者资产与采买推荐、B站热度监测、设置分页和跨页面持续运行的周报 AI 任务，并与普通版使用不同的程序名、快捷方式、安装记录、userData 和在线更新频道。两版可以并行安装，但共享本地 `8765/32123` 端口，因此不能同时运行。AIagent 版只读取 `channels/agentver/latest.json`，不会回退到普通版 Latest；普通版仍只使用原有 `latest.json`。
+AIagent 已同步普通版 v0.4.9 的业务功能。驾驶舱按当前任务选择工具、定向查询项目和报告，并减少业务列表刷新。换机备份仅迁移业务数据，保留本机驾驶舱历史。
 
-AIagent v0.4.1 安装包 SHA-256：
+AIagent 使用独立的程序名、快捷方式、安装记录、userData 和更新频道，只读取 `channels/agentver/latest.json`。两版可以并行安装，共享的本地 `8765/32123` 端口限制两版同时运行。
+
+AIagent v0.4.9 安装包 SHA-256：
 
 ```text
-0D304724EF165911D4F8FE0D312DDBE21CF76C9FBDF672615D1C7D73BCB7A601
+5131F12917F4BE7283408A77C3AECDB56786F8CA9FB04BC6DFDC23E7F496DC0A
 ```
 
 ## 使用方式
